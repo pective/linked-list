@@ -37,6 +37,26 @@ class LinkedList {
         return this.#list[this.size() - 1];
     }
 
+    at(index) {
+        return this.#list[index];
+    }
+
+    pop() {
+        this.#list.pop();
+    }
+
+    contains(value) {
+        return this.#list.some(e => e.data == value);
+    }
+
+    find(value) {
+        for(let i = 0; i < this.#list.length; i++) {
+            if (this.#list[i].data == value) return i;
+        }
+
+        return;
+    }
+
     toString() {
         let output = "";
         let current = this.head();
@@ -59,3 +79,5 @@ list.append("snake");
 list.append("turtle");
 
 list.toString();
+
+console.log(list.find("snake"));
